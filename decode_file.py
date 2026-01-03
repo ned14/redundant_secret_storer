@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-import argparse, base64, glob, os, PIL.Image, platform, qrcode, subprocess, sys, tempfile
-
-import compression.gzip as gzip
+import argparse, base64, glob, gzip, os, PIL.Image, platform, qrcode, subprocess, sys, tempfile
 
 ap = argparse.ArgumentParser(
         prog = 'decode_file',
@@ -30,7 +28,7 @@ else:
     sys.exit(1)
 if platform.machine() == 'AMD64':
     prefix += 'x64'
-elif platform.machine() == 'arm64':
+elif platform.machine() == 'arm64' or platform.machine() == 'aarch64':
     prefix += 'arm64'
 else:
     print(f"FATAL: Unknown machine {platform.machine()}", file = sys.stderr)

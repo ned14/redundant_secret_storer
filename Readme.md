@@ -23,6 +23,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Or if you have `uv`:
+
+```
+uv sync
+```
+
 And for obvious reasons, do this from an internet connected
 environment, transferring the venv produced into a secure
 not internet connected environment afterwards!
@@ -147,3 +153,10 @@ which might also suffice. Just DO NOT EVER EVER use a Microsoft
 Windows installation of ANY kind, nor a traditional Linux installation
 of ANY kind. Anything with a mutable sysroot is not a secure
 environment BY DEFINITION.
+
+## Changelog
+
+- Rev 1: First release.
+
+- Rev 2: Add `uv` support, downgrade scripts to work okay on Python
+>=3.9, fix bugs on AArch64 Linux.
